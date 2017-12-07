@@ -1,0 +1,110 @@
+main {
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  display: block;
+}
+.body {
+  margin: 2em;
+  background: red !important;
+}
+.modal {
+    /* modals are hidden by default */
+    display: none;
+
+    .modal {
+        /* modal container fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* z-index must be higher than .modal-background */
+        z-index: 1000;
+
+        /* enables scrolling for tall modals */
+        overflow: auto;
+
+        .modal-body {
+            padding: 20px;
+            background: #fff;
+
+            /* margin exposes part of the modal background */
+            margin: 40px;
+        }
+    }
+
+    .modal-background {
+        /* modal background fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* semi-transparent black  */
+        background-color: #000;
+        opacity: 0.75;
+
+        /* z-index must be below .modal and above everything else  */
+        z-index: 900;
+    }
+
+}
+
+.body.modal-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden;
+}
+.main-header{
+border-bottom: 2px solid #D35106;
+background:#00628B;
+height: 60px;
+}
+.header-image{
+ width:110px;
+ padding:5px;
+}
+.sidebar-toggle {
+   float: left;
+ padding: 15px;
+   font-family: fontAwesome;
+ color:white;
+}
+.dropdown-toggle{
+  float:right;
+  color: whitesmoke;
+  padding: 20px;
+}
+.user-image{
+  float: left;
+width: 25px;
+height: 25px;
+border-radius: 50%;
+margin-right: 10px;
+margin-top: -2px;
+border: 1px solid;
+border-color: rgba(255,255,255,.2);
+}
+.logout-img{
+  float:right;
+  border-radius: 50%;
+  height:60px;
+}
+.cdk-global-overlay-wrapper{
+  padding-left: 40%;
+  padding-top: 20%;
+}
+.no-padding{
+  padding:0;
+}
+.sideBar-cell{
+  width:100%;
+  padding-bottom: 1px;
+}
+.sideBar-cell-anchor{
+  border-color: black;
+  border-radius: 8px;
+}

@@ -1,0 +1,28 @@
+
+<div id="mainHeader" class = "main-header" *ngIf="isLogged">
+  <a (click)="toggleSidePane()" class="sidebar-toggle" data-toggle="offcanvas" role="button" style="color:white;">
+    <span class="sr-only logo" onclick="toggleSidePane()">Toggle navigation</span>
+    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" style="font-size:17px;padding-top: 5px;"></span>
+  </a>
+  <img src = "/src/assets/images/logoggk-sangam.png" border ="0" alt = "GGK-Tech" class="header-image">
+  <a href="./">
+  <img src = "/src/assets/images/logout.png" border ="0" alt = "GGK-Tech" class="logout-img" >
+  </a>
+  <a class="dropdown-toggle" disable = "true" data-toggle="dropdown" area-expanded="true">
+  	<img src = "/src/assets/images/user.png" border ="0" alt = "GGK-Tech" class="user-image">
+  	<span>Welcome {{userName}}</span>
+  </a>
+</div>
+<div class="row col-xs-12">
+  <div id="sideBar" class="col-sm-1 no-padding" *ngIf="isLogged" style="transition: 500ms;" [ngStyle]="{'width': displaySidePane ? '0px' : '135px'}" >
+      <div class="col-xs-12  no-padding">
+          <ul class="nav nav-tabs tabs-left">
+            <li class="sideBar-cell"><a (click) = "showListOfUsers()" class='sideBar-cell-anchor'>List Of Users</a></li>
+              <li class="sideBar-cell"><a (click) = "showAddUser()" class='sideBar-cell-anchor'>Add New User</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="col-sm-11 no-padding">
+   <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+body {
+    background: #aec4e2;
+    color: #fff;
+}
+.btn {
+	padding: 3px 6px
+}
+.ag-fresh{
+	line-height:2;
+}
+ .no-padding{
+ padding:0px;
+ }
+  .margintop-20{
+	border: 1px solid;
+    border-radius: 15px;
+ }

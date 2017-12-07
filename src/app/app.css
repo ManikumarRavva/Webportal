@@ -1,0 +1,64 @@
+/* EXAMPLE STYLES
+-------------------------------*/
+body {
+    font-family: roboto;
+    padding: 20px;
+}
+
+nav {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+
+    a {
+        margin-right: 8px;
+    }
+}
+
+h1 {
+    font-weight: normal;
+    margin-top: 0;
+}
+
+input[type="text"] {
+    display:block;
+    width: 100%;
+    font-family: roboto;
+}
+
+.credits {
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+ag-cell {
+    position: absolute;
+}
+.dropdown-toggle{
+  float:right;
+  color: whitesmoke;
+  padding: 20px;
+}
+.user-image{
+  float: left;
+width: 25px;
+height: 25px;
+border-radius: 50%;
+margin-right: 10px;
+margin-top: -2px;
+border: 1px solid;
+border-color: rgba(255,255,255,.2);
+}
+.logout-img{
+  float:right;
+  border-radius: 50%;
+  height:60px;
+}
+.cdk-global-overlay-wrapper{
+  padding-left: 40%;
+  padding-top: 20%;
+}
+.noPadding{
+  padding:0;
+}

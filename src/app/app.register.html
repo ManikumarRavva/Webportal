@@ -1,0 +1,135 @@
+<main>
+	<div class="container">
+    	<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href=""  id="login-form-link">Login</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="register" class="active" id="register-form-link">Register</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<form #registerForm="ngForm"  (ngSubmit) = "registerSubmit(registerForm)" role="form" id="registerForm" name="registerForm">
+									<div class="col-lg-12 col-lg-11 right-padding-zero">
+										<div class="form-group">
+											<input type="text" id="username" name="username" class="form-control" required  tabindex="1"  placeholder="Username"  [(ngModel)]="newUser.userName" #username="ngModel">
+										</div>
+									</div>
+									<div class="col-lg-1 padding-zero">
+										<span class="required ">*</span>
+									</div>
+									<div class="col-lg-12">
+										<div *ngIf="username.errors && (username.dirty || username.touched)"
+										     class="alert alert-danger">
+										    <div *ngIf="username.errors.required && registerForm.dirty">
+										      User Name is required
+										    </div>
+										</div>
+									</div>
+									<div class="col-lg-12 col-lg-11 right-padding-zero">
+										<div class="form-group">
+											<input type="text" name="firstname" id="firstname" required tabindex="1" class="form-control" placeholder="Enter First Name" [(ngModel)]="newUser.firstName" #firstname="ngModel">
+										</div>
+									</div>
+									<div class="col-lg-1 padding-zero">
+										<span class="required ">*</span>
+									</div>
+									<div class="col-lg-12">
+										<div *ngIf="firstname.errors && (firstname.dirty || firstname.touched)"
+										     class="alert alert-danger">
+										    <div *ngIf="!firstname.errors.required && registerForm.dirty">
+										      First Name is required
+										    </div>
+										</div>
+									</div>
+									<div class="col-lg-12 col-lg-11 right-padding-zero">
+										<div class="form-group">
+											<input type="text" name="lastName" id="lastName" tabindex="1" class="form-control" placeholder="Enter Last Name" [(ngModel)]="newUser.lastName" #lastName="ngModel">
+										</div>
+									</div>
+									<div class="col-lg-1 padding-zero">
+										<span class="required ">*</span>
+									</div>
+									<div class="col-lg-12 col-lg-11 right-padding-zero">
+										<div class="form-group">
+											<input type="email" name="email" id="email" tabindex="1" required class="form-control" placeholder="Enter Email Address" [(ngModel)]="newUser.email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel">
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div *ngIf="email.errors && (email.dirty || email.touched) && registerForm.dirty"
+										     class="alert alert-danger">
+										    <div [hidden]="!email.errors.required">
+										      Email is required, enter in valid format.
+										    </div>
+												<div [hidden]="!email.errors.pattern">
+										      Invalid Email
+										    </div>
+										</div>
+									</div>
+									<div class="col-lg-12 col-lg-11 right-padding-zero">
+										<div class="form-group">
+											<input type="password" name="password" id="password" required tabindex="2" class="form-control" placeholder="Enter Password" required [(ngModel)]="newUser.password" #password="ngModel" pattern="(?=.*?[a-z])(?=.*?[0-9]).{6,}$">
+										</div>
+									</div>
+									<div class="col-lg-1 padding-zero">
+										<span class="required ">*</span>
+									</div>
+									<div class="col-lg-12">
+										<div *ngIf="password.errors && (password.dirty || password.touched) && registerForm.dirty"
+										     class="alert alert-danger">
+										    <div [hidden]="!password.errors.required">
+										      Password is required
+										    </div>
+												<div [hidden]="!password.errors.pattern">
+										      Password lenth should be more than 6, contain one letter and number.
+										    </div>
+										</div>
+									</div>
+									<div class="col-lg-12 col-lg-11 right-padding-zero">
+										<div class="form-group">
+											<input type="password" name="confirmpassword" id="confirmpassword" required tabindex="2" class="form-control" placeholder="Confirm Password" [(ngModel)]="newUser.confirmPassword" #confirmpassword="ngModel">
+										</div>
+									</div>
+									<div class="col-lg-1 padding-zero">
+										<span class="required ">*</span>
+									</div>
+									<div class="col-lg-12">
+										<div *ngIf="confirmpassword.errors && (confirmpassword.dirty || confirmpassword.touched) && registerForm.dirty"
+										     class="alert alert-danger">
+										    <div [hidden]="!confirmpassword.errors.required">
+										       Confirm Password is required
+										    </div>
+										</div>
+										<div *ngIf="registerSuccess == 'valid' ; else successTemplate"   class="alert alert-success">
+										  {{errorMessage}}
+										</div>
+										<ng-template #successTemplate>
+											<div *ngIf="errorMessage && registerForm.dirty" class="alert alert-danger">
+												{{errorMessage}}
+											</div>
+										</ng-template>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now" [disabled] = "!registerForm.form.valid" >
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
